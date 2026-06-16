@@ -22,7 +22,9 @@
 ├── Exercise8_1/            ADC-DAC 直通
 ├── Exercise9_Master/       SPI 主机通信
 ├── Exercise9_Slaver/       SPI 从机通信
-├── Self_Project/           DS3231 模拟+数字时钟 (OLED)
+├── Self_Project/           DS3231 模拟+数字时钟 v2 (最终完整版)
+├── Self_Project_v1/        时钟项目 v1 (I2C OLED, 简化版)
+├── Self_Project_v3/        时钟项目 v3 (SPI OLED, 中间版)
 └── README.md
 ```
 
@@ -194,6 +196,29 @@ while (1) {
 2. 编译烧录一次以初始化 RTC
 3. 重新注释掉时间设置代码，再次烧录
 4. 之后 RTC 由备用电池维持时间，无需重复设置
+
+---
+
+## Self Project 版本演进
+
+本项目经历了三个迭代版本，展示了从简单原型到完整功能的开发过程：
+
+| 版本 | 接口 | 代码行数 | 功能 |
+|------|------|---------|------|
+| **v1** (`Self_Project_v1/`) | I2C OLED | 77 行 | 简单模拟表盘 (4个点刻度), 基础数字时间 |
+| **v2** (`Self_Project/`) | SPI OLED | 247 行 | **最终完整版**: 60刻度表盘+12个数字, 粗细分针/时针/秒针, 平滑扫掠, 数字面板, 日期+温度, RTC健康检测, 开机动画 |
+| **v3** (`Self_Project_v3/`) | SPI OLED | 99 行 | SPI版简化时钟, 4点刻度, 基础数字时间 |
+
+> 三个版本共享同一套库文件（位于 `Self_Project/` 中）：Adafruit-GFX-Library-mbed-compatible、Adafruit_GFX-Mbed-master、mbed-ds3231-main。v1 使用 I2C 模式连接 OLED，v2/v3 使用更快的 SPI 模式。
+
+---
+
+## 参考资料
+
+- `Data_Sheet_STM32L432KC.pdf` — STM32L432KC 官方数据手册
+- `MS_Lab_Manual.docx` — 微电子系统课程实验手册（个人信息已脱敏）
+
+> 注：项目提案表 (Project Proposal.pdf) 和完整项目压缩包因含个人信息未上传。
 
 ---
 
