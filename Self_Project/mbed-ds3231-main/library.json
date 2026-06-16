@@ -1,0 +1,25 @@
+{
+  "name": "DS3231",
+  "version": "0.1.2",
+  "description": "MBED OS Library for interacting with \"DS3231\" RTC",
+  "keywords": "ds3231, mbed os",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/jaster-prj/mbed-ds3231.git"
+  },
+  "authors":
+  [
+    {
+      "name": "Justin Jordan"
+    },
+    {
+      "name": "Tobias Jaster",
+      "email": "t.jaster@posteo.de",
+      "maintainer": true
+    }
+  ],
+  "license": "MIT",
+  "frameworks": "mbed",
+  "platforms": "*"
+}
